@@ -10,7 +10,8 @@ defmodule Doppel.Application do
     children = [
       Doppel.Results,
       {Doppel.PathFinder, "."},
-      Doppel.WorkerSupervisor
+      Doppel.WorkerSupervisor,
+      {Doppel.Gatherer, 1}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
