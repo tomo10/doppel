@@ -9,12 +9,13 @@ defmodule Doppel.Application do
   def start(_type, _args) do
     children = [
       Doppel.Results,
-      {Doppel.PathFinder, "."}
+      {Doppel.PathFinder, "."},
+      Doppel.WorkerSupervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Doppel.Supervisor]
+    opts = [strategy: :one_for_all, name: Doppel.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
