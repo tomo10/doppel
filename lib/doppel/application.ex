@@ -8,7 +8,8 @@ defmodule Doppel.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      Doppel.Results
+      Doppel.Results,
+      {Doppel.PathFinder, "."}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
