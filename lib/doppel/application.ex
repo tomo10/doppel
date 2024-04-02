@@ -8,8 +8,7 @@ defmodule Doppel.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: Doppel.Worker.start_link(arg)
-      # {Doppel.Worker, arg}
+      Doppel.Results
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
